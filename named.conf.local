@@ -1,0 +1,25 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+
+
+// Define RPZ zones for malware and phishing protection
+zone "rpz.malware.local" {
+        type master;                       // Define as a master zone
+        file "/etc/bind/rpz.malware.db";  // File containing malware domain rules
+        allow-query { localhost; };
+        allow-transfer { localhost; };
+};
+
+zone "rpz.phishing.local" {
+        type master;                       // Define as a master zone
+        file "/etc/bind/rpz.phishing.db"; // File containing phishing domain rules
+        allow-query { localhost; };
+        allow-transfer { localhost; };
+
+};
