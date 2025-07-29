@@ -1,0 +1,108 @@
+
+// Define access control lists (ACLs)
+acl "local" {
+    localhost;        // Loopback address
+    192.168.0.17;     // Specific trusted IP
+    192.168.0.6;      
+    192.168.0.45;     
+    192.168.0.16;  
+    192.168.0.50;     
+    192.168.0.55;
+    192.168.0.51;
+    192.168.0.54;
+    192.168.0.57;
+    172.20.10.2;
+    172.20.10.3;
+    172.20.10.4;
+    172.20.10.14;
+    192.168.8.167;
+    192.168.8.163;
+    192.168.8.168;
+    192.168.8.169;
+    192.168.0.73;
+    192.168.0.43;
+    192.168.0.68;
+    192.168.0.69;     
+};
+
+
+
+options {
+        /* all relative paths use this directory as a base */
+        directory "/var/cache/bind";
+		dump-file "/var/named/data/cache_dump.db";
+        statistics-file "/var/log/named/named_stats.log";
+		//statistics-file "/var/log/named/named_stats.log";
+		memstatistics-file "/var/named/data/named_mem_stats.txt";
+		
+        /* 
+		 * version statement for security to avoid hacking known weaknesses
+         * if the real version number is revealed
+		 */
+        version "not currently available";
+
+        /* this is the default */
+        recursion yes;
+        
+        /* access-list (blocked ip) */
+        //blackhole { 192.168.0.50; };
+
+        /* listen on command */
+        //listen-on port 53 { 127.0.0.1; 1.9.54.116; };
+		listen-on-v6 { any; };
+		listen-on port 53 { any; };
+		listen-on-v6 port 53 { ::1; };
+
+        /* recursive queries only allowed from these ip and references the acl clause */
+        allow-query { local; }; /* This is default acl client configuration */
+        allow-query-cache { local; }; //Controls which clients are allowed to query the server for cached DNS data.
+        allow-recursion { local; };   //Controls which clients are permitted to perform recursive DNS queries via the server.
+
+				
+        /*
+		 * this ensures that any reverse map for private IPs
+         * not defined in a zone file will *not* be passed to the public network
+         * it is the default value
+		 */
+        empty-zones-enable yes;
+
+
+		/* EDNS Settings: Improve DNS performance and prevent fragmentation */
+        edns-udp-size 1232;   // Optimal value to prevent fragmentation in most networks
+        max-udp-size 1232;    // Match the edns-udp-size to align with network MTU
+
+
+        // Response Policy Zones (RPZ): Protect against malware and phishing
+        response-policy {
+                zone "rpz.malware.local";   // RPZ for blocking malware
+                zone "rpz.phishing.local"; // RPZ for blocking phishing domains
+        };
+		
+        dnssec-validation auto;
+
+        auth-nxdomain no;    # conform to RFC1035
+
+        querylog yes;
+
+        dnstap { all;};
+        //dnstap {auth; resolver query;};
+        dnstap-output unix "/var/run/named/dnstap.sock";
+
+        //Implement rate limiting to prevent abuse
+        rate-limit {
+                responses-per-second 15;
+                window 5;
+                slip 2;
+       };
+
+        //Cache settings for performance
+        max-cache-size 512M; 
+        max-cache-ttl 86400;   //24hours
+        max-ncache-ttl 3600;   //1hours
+
+
+        max-journal-size 100M; # Increase the journal size limit
+        recursive-clients 20000; # Allow more recursive clients
+
+
+};
