@@ -2,12 +2,8 @@
 
 <img width="320" height="135" alt="image" src="https://github.com/user-attachments/assets/cc71ff61-7cad-4583-976d-98049e0b8c51" />
 
-![BIND9 DNS](https://github.com/user-attachments/assets/cc71ff61-7cad-4583-976d-98049e0b8c51)
 
 BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS server software developed by the Internet Systems Consortium (ISC). Renowned for its robustness and flexibility, BIND 9 serves a crucial role in the DNS infrastructure, capable of acting as both an authoritative name server and a recursive resolver. It supports a comprehensive array of DNS features, including IPv6, DNSSEC (DNS Security Extensions), and dynamic DNS updates, ensuring enhanced security, reliability, and functionality. BIND 9 is designed to be highly scalable, making it suitable for deployment in various environments, from small networks to large enterprises and ISPs. Its vast configuration options allow administrators to fine-tune performance and security settings according to specific needs. BIND 9 also offers extensive logging and statistics, aiding in effective monitoring and troubleshooting. Furthermore, it supports modern DNS protocols and standards, ensuring compatibility with other DNS implementations.
-
-
-
 
 ---
 
