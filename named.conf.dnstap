@@ -1,6 +1,0 @@
-dnstap {
-	resolver-query;
-	resolver-response;
-	client-query;
-	client-response;
-};
