@@ -7,7 +7,7 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Overview of RPZ Automation](#overview-of-rpz-automation)
@@ -24,7 +24,7 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 
 ---
 
-## ✅ Features
+## Features
 
 - DNS resolver using BIND9
 - Response Policy Zones (RPZ) for threat blocking
@@ -34,12 +34,12 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 
 ---
 
-## 🔄 Overview of RPZ Automation
+## Overview of RPZ Automation
 
 RPZ (Response Policy Zones) allow DNS servers to enforce filtering policies like blocking or redirecting malicious domains. This project:
 - Fetches malicious/phishing domain lists from public threat intelligence sources.
@@ -47,12 +47,12 @@ RPZ (Response Policy Zones) allow DNS servers to enforce filtering policies like
 - Updates zone files and reloads BIND9.
 
 **Sources Used:**
-- 🧪 URLhaus (Malware Domains): `https://urlhaus.abuse.ch/downloads/hostfile/`
-- 🎣 OpenPhish (Phishing URLs): `https://openphish.com/feed.txt`
+- URLhaus (Malware Domains): `https://urlhaus.abuse.ch/downloads/hostfile/`
+- OpenPhish (Phishing URLs): `https://openphish.com/feed.txt`
 
 ---
 
-## 🛠️ Setup Guide
+## Setup Guide
 
 ### 1. Identify Threat Feeds
 
