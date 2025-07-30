@@ -12,8 +12,9 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 
 
 - [Features](#features)
+- [Configure BIND 9](#Configure-BIND-9)
 - [Overview of RPZ Automation](#overview-of-rpz-automation)
-- [Updating RPZ Automatically](#updating RPZ Automatically)
+- [Updating RPZ Automatically](#updating-RPZ-Automatically)
   - [1. Identify Public Threat Feeds](#1-identify-public-threat-feeds)
   - [2. Install Required Tools](#2-install-required-tools)
   - [3. Create RPZ Update Script](#3-create-rpz-update-script)
