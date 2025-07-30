@@ -54,7 +54,7 @@ RPZ (Response Policy Zones) allow DNS servers to enforce filtering policies like
 
 ---
 
-## Setup Guide
+## updating RPZ Automatically
 
 ### 1. Identify Threat Feeds
 
