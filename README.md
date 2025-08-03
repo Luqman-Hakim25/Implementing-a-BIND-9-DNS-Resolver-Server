@@ -18,7 +18,7 @@ This project demonstrates the deployment of a secure and privacy-focused interna
     - [Add Root Hints](#Add-Root-Hints)
     - [Configure Logging (Optional)](#Configure-Logging (Optional))
     - [Configure RPZ(Response Policy Zones)](#Configure-RPZ(Response-Policy-Zones))
-- [Automation with cron (update RPZ)](##Automation-with-cron-(update-RPZ))
+- [Automation with cron (update RPZ)](#Automation-with-cron-(update-RPZ))
   - [1.Sources for RPZ Data](#1.Sources-for-RPZ-Data)
   - [2.Install Necessary Tools](#2.Install-Necessary-Tools)
   - [3.Prepare the Script to Download and Format RPZ Files and set the file permission](#3.Prepare-the-Script-to-Download-and-Format-RPZ-Files-and-set-the-file-permission)
@@ -34,19 +34,12 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 ## Features
 
 - Recursive DNS resolution for internal clients
-
 - DNSSEC support for query integrity
-
 - ACL (Access Control List) to restrict query access
-
 - RPZ (Response Policy Zone) to block phishing/malicious domains
-
 - DNSTAP and logging for monitoring and analysis
-
 - DNS query caching for performance optimization
-
 - Protection against DNS spoofing
-
 - RPZ zone automation threat updates
 
 ## Installation & Configuration(DNS Resolver)
@@ -54,15 +47,12 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 ### Prerequisites
 
 - Debian 12 (Bookworm)
-
 - BIND 9 (`sudo apt install bind9 bind9utils bind9-doc`)
-
 - Curl, cron, and standard CLI tools
 
 ### Installation Steps
 
 Install BIND 9
-
 ```
 # Update system
 sudo apt update && sudo apt upgrade
@@ -81,15 +71,10 @@ named -v
 ### Configuration Files
 
 - `/etc/bind/named.conf.options`
-
 - `/etc/bind/named.conf.local`
-
 - `/etc/bind/named.conf.logging`
-
 - `/etc/bind/root.hints`
-
 - RPZ zone files: `rpz.malware.db`, `rpz.phishing.db`
-
 - Automation script: `update-rpz.sh`
 
 Refer to the `/config` and `/scripts` folders for sample configurations.
@@ -193,17 +178,12 @@ To automate the process of updating the RPZ zone files with data from public fee
 reliable source for the RPZ data (malware and phishing domains). Some public feeds include:
 
 - Abuse.ch (Malware Domain Blocklist)
-
 - OpenPhish (Phishing URL Feed)
-
 - Blocklist.de (Malware Feed)
-
 - Zeus Tracker (Malicious Domains)
 
 In this project, I use this two public feeds:
-
 - **Malware**: `https://urlhaus.abuse.ch/downloads/hostfile/`
-
 - **Phishing**: `https://openphish.com/feed.txt`
 
 ### 2.Install Necessary Tools
@@ -291,6 +271,5 @@ Add the following line to run the script daily at 2am:
 This cron job will:
 
 - Run the script at 2:00 AM every day.
-
 - Update the RPZ files and reload BIND.
 
