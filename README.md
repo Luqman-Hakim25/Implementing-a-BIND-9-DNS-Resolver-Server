@@ -29,19 +29,12 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 ## Features
 
 - Recursive DNS resolution for internal clients
-
 - DNSSEC support for query integrity
-
 - ACL (Access Control List) to restrict query access
-
 - RPZ (Response Policy Zone) to block phishing/malicious domains
-
 - DNSTAP and logging for monitoring and analysis
-
 - DNS query caching for performance optimization
-
 - Protection against DNS spoofing
-
 - RPZ zone automation threat updates
 
 ## Installation & Configuration
@@ -49,9 +42,7 @@ BIND 9 (Berkeley Internet Name Domain version 9) is a premier open-source DNS se
 ### Prerequisites
 
 - Debian 12 (Bookworm)
-
 - BIND 9 (`sudo apt install bind9 bind9utils bind9-doc`)
-
 - Curl, cron, and standard CLI tools
 
 ### Installation Steps
