@@ -9,7 +9,7 @@ This project demonstrates the deployment of a secure and privacy-focused interna
 - [Overview](#Overview)
 - [BIND 9](#BIND-9)
 - [Features](#Features)
-- [Installation & Configuration(DNS Resolver)](#Installation-&-Configuration(DNS-Resolver))
+- [Installation & Configuration (DNS Resolver)](#Installation-&-Configuration-(DNS-Resolver))
   - [Prerequisites](#Prerequisites)
   - [Installation Steps](#Installation-Steps)
   - [Configuration Files](#Configuration-Files)
@@ -17,8 +17,8 @@ This project demonstrates the deployment of a secure and privacy-focused interna
     - [Configure Main BIND Files](#Configure-Main-BIND-Files)
     - [Add Root Hints](#Add-Root-Hints)
     - [Configure Logging (Optional)](#Configure-Logging (Optional))
-    - [Configure RPZ(Response Policy Zones)](#Configure-RPZ(Response-Policy-Zones)
-- [Automation with `cron` (update RPZ)](#Automation with `cron` (update RPZ))
+    - [Configure RPZ(Response Policy Zones)](#Configure-RPZ(Response-Policy-Zones))
+- [Automation with cron (update RPZ)](#Automation-with-cron-(update-RPZ))
   - [1.Sources for RPZ Data](#1.Sources-for-RPZ-Data)
   - [2.Install Necessary Tools](#2.Install-Necessary-Tools)
   - [3.Prepare the Script to Download and Format RPZ Files and set the file permission](#3.Prepare-the-Script-to-Download-and-Format-RPZ-Files-and-set-the-file-permission)
@@ -184,7 +184,7 @@ sudo nano /etc/bind/rpz.malware.db
 sudo nano /etc/bind/rpz.phishing.db
 ```
 
-## Automation with `cron` (update RPZ)
+## Automation with cron (update RPZ)
 
 To automate the process of updating the RPZ zone files with data from public feeds, I create a script that regularly downloads the feeds, formats them into the RPZ zone file format, and then reloads the BIND service. Here’s a step-by-step guide to set this up.
 
