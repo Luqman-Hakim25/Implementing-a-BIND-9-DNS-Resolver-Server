@@ -18,7 +18,7 @@ This project demonstrates the deployment of a secure and privacy-focused interna
     - [Add Root Hints](#Add-Root-Hints)
     - [Configure Logging (Optional)](#Configure-Logging (Optional))
     - [Configure RPZ(Response Policy Zones)](#Configure-RPZ(Response-Policy-Zones))
-- [Automation with cron (update RPZ)](#Automation-with-cron-(update-RPZ))
+- [Automation with cron (update RPZ)](##Automation-with-cron-(update-RPZ))
   - [1.Sources for RPZ Data](#1.Sources-for-RPZ-Data)
   - [2.Install Necessary Tools](#2.Install-Necessary-Tools)
   - [3.Prepare the Script to Download and Format RPZ Files and set the file permission](#3.Prepare-the-Script-to-Download-and-Format-RPZ-Files-and-set-the-file-permission)
